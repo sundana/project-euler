@@ -1,3 +1,6 @@
+import unittest
+
+
 def multiplies_of_3_or_5(natural_numbers):
     record = []
     for number in natural_numbers:
@@ -10,5 +13,13 @@ def multiplies_of_3_or_5(natural_numbers):
     return sum(record)
 
 
-sample = [i for i in range(1, 1001)]
-print(multiplies_of_3_or_5(sample))
+class TestProblem1(unittest.TestCase):
+    sample = [i for i in range(1, 1001)]
+
+    def test(self):
+        self.assertEqual(multiplies_of_3_or_5(
+            self.sample), 233168, "Hasil salah.")
+
+
+if __name__ == "__main__":
+    unittest.main()
